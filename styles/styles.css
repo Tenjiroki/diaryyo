@@ -1,0 +1,15 @@
+html {
+  font-family: 'Literata', 'Manrope', 'Unbounded', sans-serif;
+}
+
+nav{
+  background-color: #1E1E1C;
+  height: 8rem;
+}
+
+.nav-head{
+  display: block;
+  color: #ECE9E4;
+  text-decoration: none;
+  line-height: 7rem;
+}
