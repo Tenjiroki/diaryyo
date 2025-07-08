@@ -1,5 +1,6 @@
 html {
   font-family: 'Literata', 'Manrope', 'Unbounded', sans-serif;
+  background-color: #3C5240;
 }
 
 nav{
@@ -11,5 +12,16 @@ nav{
   display: block;
   color: #ECE9E4;
   text-decoration: none;
-  line-height: 7rem;
+  height: 6rem;
+  line-height: 6rem;
+}
+
+.logo{
+  height: 5rem;
+  vertical-align: bottom;
+  color: #D2A95F;
+}
+
+.nav-head:hover .logo{
+  filter: drop-shadow(0 0 0.5rem #D2A95F);
 }
