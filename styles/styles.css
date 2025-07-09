@@ -1,11 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
-  font-family: 'Literata', 'Manrope', 'Unbounded', sans-serif;
+  font-family: 'Unbounded', 'Manrope', 'Literata', sans-serif;
   background-color: #3C5240;
 }
 
-nav{
+.nav{
   background-color: #1E1E1C;
-  height: 8rem;
+  height: 6.5rem;
+}
+
+.nav_lay{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-head{
@@ -16,12 +26,127 @@ nav{
   line-height: 6rem;
 }
 
-.logo{
+.nav_pic{
   height: 5rem;
   vertical-align: bottom;
   color: #D2A95F;
 }
 
-.nav-head:hover .logo{
+.nav-head:hover .nav_pic{
   filter: drop-shadow(0 0 0.5rem #D2A95F);
+}
+
+.button{
+  display: inline-block;
+  background-color: #C9635A;
+  color: #ECE9E4;
+  text-decoration: none;
+  padding: 0rem 2rem;
+  border-radius: 0.7rem;
+  text-transform: uppercase;
+  line-height: 3.8rem;
+}
+
+.button:hover{
+  background-color: #D2A95F;
+}
+
+.button_pic{
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  top: 0.6rem;
+  margin-right: 0.6rem;
+}
+
+.main-head{
+  text-transform: uppercase;
+  text-align: center;
+  color: #1E1E1C;
+  font-size: 3rem;
+  letter-spacing: 0.3em;
+}
+
+.card{
+  display: flex;
+  overflow: hidden;
+  background-color: #A3A5A3;
+  padding: 0rem;
+  margin-bottom: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem #1E1E1C;
+}
+
+.card_head{
+  color: #1E1E1C;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.card_head::after{
+  content: "";
+  display: block;
+  width: 8rem;
+  height: 0.125rem;
+  background-color: #3C5240;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card_pic{
+  display: block;
+  width: 28rem;
+  height: 21rem;
+  object-fit: cover;
+}
+
+.card_txt-time{
+  color: #3C5240;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.card_txt_parag{
+  color: #1E1E1C;
+  line-height: 1.5rem;
+}
+
+.container{
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 }

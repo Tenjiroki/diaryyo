@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +10,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Manrope:wght@400;700&family=Literata:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <title>My Diary Yo</title>
 </head>
+
+
 <body>
-  <nav>
-    <a href="index.html" class="nav-head">
-      <img src="./pics/logo.png" class="logo"/>
-      Diary Yo
-    </a>
+
+
+  <nav class="nav">
+    <div class="container">
+      <div class="nav_lay">
+        <a href="index.html" class="nav-head">
+          <img src="./pics/logo.png" class="nav_pic"/>
+          Diary Yo
+        </a>
+        <a href="form.html" class="button">
+          <img src="./pics/add.png" class="button_pic"/>
+          New Entry
+        </a>
+      </div>
+    </div>
   </nav>
+
+
+  <main>
+    <div class="container">
+      <h1 class="main-head">Entries</h1>
+      <div class="card">
+        <div class="card_pic-container">
+          <img class="card_pic" src="./pics/0000.jpeg" class="button_pic" alt=""/>
+        </div>
+        <div class="card_txt-container">
+          <div class="card_txt-time"> Week 1 </div>
+          <h2 class="card_head"> Winter walk </h2>
+          <p class="card_txt_parag">
+            Had a winter walk near the abandoned factory. Pretty nice. Then we went to the frozen lake, where we tried to smash it to pieces. It was futile - the ice was very thick.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h2 class="card_head"> Yo </h2>
+      </div>
+    </div>
+  </main>
+
 
 </body>
 </html>
