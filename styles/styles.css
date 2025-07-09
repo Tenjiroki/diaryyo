@@ -69,6 +69,7 @@ html {
 
 .card{
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   background-color: #A3A5A3;
   padding: 0rem;
@@ -95,9 +96,10 @@ html {
 
 .card_pic{
   display: block;
-  width: 28rem;
-  height: 21rem;
   object-fit: cover;
+  height: 13rem;
+  width: 100%;
+  box-shadow: 0rem 0.3rem 1rem #1E1E1C;
 }
 
 .card_txt-time{
@@ -112,6 +114,12 @@ html {
 .card_txt_parag{
   color: #1E1E1C;
   line-height: 1.5rem;
+}
+
+.card_txt-container{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.6rem;
 }
 
 .container{
@@ -131,6 +139,15 @@ html {
   .container {
     max-width: 720px;
   }
+  .card {
+    flex-direction: row;
+  }
+  .card_pic{
+    width: 20rem;
+    height: 2rem;
+    min-height: 100%;
+    box-shadow: 0.4rem 0rem 1rem #1E1E1C;
+  }
 }
 
 @media (min-width: 992px) {
@@ -149,4 +166,38 @@ html {
   .container {
     max-width: 1320px;
   }
+}
+
+.pagination{
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.pagination_link{
+  display: block;
+  color: #1E1E1C;
+  background-color: #D2A95F;
+  border: 0.2rem solid #1E1E1C;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-decoration: none;
+  line-height: 2.1rem;
+  text-align: center;
+  margin-left: 0.6rem;
+  border-radius: 0.8rem;
+}
+
+.pagination_link:hover{
+  color: #D2A95F;
+  border: 0.2rem solid #D2A95F;
+  background-color: #1E1E1C;
+}
+
+.pagination_link-active{
+  color: #1E1E1C;
+  border: 0.2rem solid #1E1E1C;
+  background-color: #3C5240;
 }
