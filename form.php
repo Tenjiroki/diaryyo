@@ -18,11 +18,11 @@
   <nav class="nav">
     <div class="container">
       <div class="nav_lay">
-        <a href="index.html" class="nav-head">
+        <a href="index.php" class="nav-head">
           <img src="./pics/logo.png" class="nav_pic"/>
           Diary Yo
         </a>
-        <a href="form.html" class="button">
+        <a href="form.php" class="button">
           <img src="./pics/add.png" class="button_pic"/>
           New Entry
         </a>
@@ -34,7 +34,7 @@
   <main class="main">
     <div class="container">
       <h1 class="main-head">New Entry</h1>
-      <form method="POST" action="form.html">
+      <form method="POST" action="form.php">
         <div class="formgroup">
           <lable class="formgroup_lable" for="title">Title:</lable>
           <input class="formgroup_input" type="text" id="title" name="title"/>
