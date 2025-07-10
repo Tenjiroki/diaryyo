@@ -41,7 +41,7 @@ html {
   background-color: #C9635A;
   color: #ECE9E4;
   text-decoration: none;
-  padding: 0rem 2rem;
+  padding: 0rem 1rem;
   border-radius: 0.7rem;
   text-transform: uppercase;
   line-height: 3.8rem;
@@ -65,6 +65,37 @@ html {
   color: #1E1E1C;
   font-size: 3rem;
   letter-spacing: 0.3em;
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+.main{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+.main::before,
+.main::after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12rem;
+  top: -1rem;
+  bottom: -1rem;
+  background-image: url('../pics/sidedeco.png');
+  background-size: cover;
+  background-position: right center;
+  z-index: -1;
+  min-height: 10rem;
+}
+.main::before {
+  left: 0;
+}
+
+.main::after {
+  right: 0;
+  transform: scaleX(-1);
 }
 
 .card{
@@ -72,7 +103,7 @@ html {
   flex-direction: column;
   overflow: hidden;
   background-color: #A3A5A3;
-  padding: 0rem;
+  padding: 0;
   margin-bottom: 3rem;
   border-radius: 1.5rem;
   box-shadow: 0 1rem 2rem #1E1E1C;
@@ -132,6 +163,8 @@ html {
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -141,6 +174,8 @@ html {
   }
   .card {
     flex-direction: row;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   .card_pic{
     width: 20rem;
@@ -153,18 +188,24 @@ html {
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+    margin-left: 4rem;
+    margin-right: 4rem;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 }
 
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
+    margin-left: 7rem;
+    margin-right: 7rem;
   }
 }
 
@@ -200,4 +241,71 @@ html {
   color: #1E1E1C;
   border: 0.2rem solid #1E1E1C;
   background-color: #3C5240;
+}
+
+.footer{
+  background-color: #1E1E1C;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer::after{
+  content: "";
+  display: block;
+  width: 9.5rem;
+  height: 0.125rem;
+  background-color: #C9635A;;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.foot_head{
+  color: #C9635A;
+}
+
+.foot_txt{
+  color: #ECE9E4;
+  max-width: 40%;
+  line-height: 1.5rem;
+}
+
+.formgroup_input,
+.formgroup_lable{
+  color: #1E1E1C;
+  background-color: #ECE9E4;
+  border-color: #C9635A;
+  border-style: solid;
+  border-top-width: 0.140rem;
+  border-bottom-width: 0.140rem;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.formgroup_lable{
+  text-transform: uppercase;
+  flex: 0 0 12rem;
+  border-left-width: 0.140rem;
+  border-right-width: 0rem;
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+}
+
+.formgroup_input{
+  flex: 1 0 12rem;
+  border-left-width: 0rem;
+  border-right-width: 0.140rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+.formgroup{
+  display: flex;
+  margin: 1rem;
+}
+
+.form_submit{
+  display: flex;
+  justify-content: right;
+  margin: 1rem;
 }
