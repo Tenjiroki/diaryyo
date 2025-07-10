@@ -1,3 +1,16 @@
+<?php
+
+require __DIR__ . '/inc/db-connect.inc.php';
+require __DIR__ . '/inc/functions.inc.php';
+
+
+$datashow = $pdo->prepare('SELECT * FROM `entries`');
+$datashow->execute();
+$results = $datashow->fetchAll(PDO::FETCH_ASSOC);
+//var_dump($results);
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,33 +47,27 @@
   <main class="main">
     <div class="container">
       <h1 class="main-head">Entries</h1>
+      <?php foreach($results as $result): ?>
       <div class="card">
         <div class="card_pic-container">
           <img class="card_pic" src="./pics/0000.jpeg" class="button_pic" alt=""/>
         </div>
         <div class="card_txt-container">
-          <div class="card_txt-time"> Week 1 </div>
-          <h2 class="card_head"> Winter walk </h2>
+          <div class="card_txt-time"> <?php echo e($result['occurence']);?> </div>
+          <h2 class="card_head"> <?php echo e($result['title']);?> </h2>
           <p class="card_txt_parag">
-            Had a winter walk near the abandoned factory. Pretty nice. Then we went to the frozen lake, where we tried to smash it to pieces. It was futile - the ice was very thick.
+            <?php echo nl2br(e($result['story']));?>
           </p>
         </div>
       </div>
-      <div class="card">
-        <div class="card_pic-container">
-          <img class="card_pic" src="./pics/0001.jpeg" class="button_pic" alt=""/>
-        </div>
-        <div class="card_txt-container">
-          <div class="card_txt-time"> Week 1 </div>
-          <h2 class="card_head"> Yo </h2>
-        </div>
-      </div>
+    <?php endforeach; ?>
+
       <ul class="pagination">
         <li class="pagination_li">
           <a href="#" class="pagination_link">⇜</a>
         </li>
         <li class="pagination_li">
-          <a href="#" class="pagination_link pagination_link-active">1</a>
+          <a href="#" class="pagination_link">1</a>
         </li>
         <li class="pagination_li">
           <a href="#" class="pagination_link">2</a>
