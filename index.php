@@ -29,9 +29,11 @@ $results = $datashow->fetchAll(PDO::FETCH_ASSOC);
 <h1 class="main-head">Entries</h1>
 <?php foreach($results as $result): ?>
 <div class="card">
+  <?php if(!empty($result['image'])): ?>
   <div class="card_pic-container">
-    <img class="card_pic" src="./pics/0000.jpeg" class="button_pic" alt=""/>
+    <img class="card_pic" src="./uploads/<?php echo e($result['image']); ?>" alt="entry image" />
   </div>
+  <?php endif;?>
   <div class="card_txt-container">
     <?php
       $dateExpl = explode('-', $result['occurence']);
