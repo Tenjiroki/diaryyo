@@ -1,70 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
+require __DIR__ . '/inc/db-connect.inc.php';
+require __DIR__ . '/inc/functions.inc.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles/normalize.css">
-    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Manrope:wght@400;700&family=Literata:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-    <title>My Diary Yo</title>
-</head>
+if (!empty($_POST)){
+  $title = (string) ($_POST['title'] ?? '');
+  $occurence = (string) ($_POST['date'] ?? '');
+  $story = (string) ($_POST['message'] ?? '');
 
+  $infosend = $pdo->prepare('INSERT INTO `entries` (`title`, `occurence`, `story`) VALUES (:title, :occurence, :story)');
+  $infosend->bindValue('title', $title);
+  $infosend->bindValue('occurence', $occurence);
+  $infosend->bindValue('story', $story);
+  $infosend->execute();
 
-<body>
+  header('Location: index.php');
+  exit;
+}
 
+?>
 
-  <nav class="nav">
-    <div class="container">
-      <div class="nav_lay">
-        <a href="index.php" class="nav-head">
-          <img src="./pics/logo.png" class="nav_pic"/>
-          Diary Yo
-        </a>
-        <a href="form.php" class="button">
-          <img src="./pics/add.png" class="button_pic"/>
-          New Entry
-        </a>
-      </div>
-    </div>
-  </nav>
+<?php require __DIR__ . '/views/header.view.php';?>
 
+<h1 class="main-head">New Entry</h1>
+<form method="POST" action="form.php">
+  <div class="formgroup">
+    <lable class="formgroup_lable" for="title">Title:</lable>
+    <input class="formgroup_input" type="text" id="title" name="title" required/>
+  </div>
+  <div class="formgroup">
+    <lable class="formgroup_lable" for="date">Date:</lable>
+    <input class="formgroup_input" type="date" id="date" name="date" required/>
+  </div>
+  <div class="formgroup">
+    <lable class="formgroup_lable" for="message">Message:</lable>
+    <textarea class="formgroup_input" id="message" name="message" rows="6" required></textarea>
+  </div>
+  <div class="form_submit">
+    <button class="button">
+      <img src="./pics/send.png" class="button_pic"/>
+      Submit
+    </button>
+  </div>
+</form>
 
-  <main class="main">
-    <div class="container">
-      <h1 class="main-head">New Entry</h1>
-      <form method="POST" action="form.php">
-        <div class="formgroup">
-          <lable class="formgroup_lable" for="title">Title:</lable>
-          <input class="formgroup_input" type="text" id="title" name="title"/>
-        </div>
-        <div class="formgroup">
-          <lable class="formgroup_lable" for="date">Date:</lable>
-          <input class="formgroup_input" type="date" id="date" name="date"/>
-        </div>
-        <div class="formgroup">
-          <lable class="formgroup_lable" for="message">Message:</lable>
-          <textarea class="formgroup_input" id="message" name="message" rows="6"></textarea>
-        </div>
-        <div class="form_submit">
-          <button class="button">
-            <img src="./pics/send.png" class="button_pic"/>
-            Submit
-          </button>
-        </div>
-      </form>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <h3 class="foot_head">Sander's Diary</h3>
-      <p class="foot_txt">I am learning PHP and need some actual works for my portfolio so here we go my dear friends:)</p>
-    </div>
-  </footer>
-
-
-
-</body>
-</html>
+<?php require __DIR__ . '/views/footer.view.php';?>
